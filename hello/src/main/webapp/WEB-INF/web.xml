@@ -4,4 +4,26 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>LoginHandler</servlet-name>
+  	<display-name>LoginHandler</display-name>
+  	<description></description>
+  	<servlet-class>com.candev.tuto.servlet.LoginHandler</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegisterHandler</servlet-name>
+  	<display-name>RegisterHandler</display-name>
+  	<description></description>
+  	<servlet-class>com.candev.tuto.servlet.RegisterHandler</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginHandler</servlet-name>
+  	<url-pattern>/LoginHandler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterHandler</servlet-name>
+  	<url-pattern>/RegisterHandler</url-pattern>
+  </servlet-mapping>
 </web-app>

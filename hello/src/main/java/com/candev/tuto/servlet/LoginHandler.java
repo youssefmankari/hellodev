@@ -58,15 +58,17 @@ public class LoginHandler extends HttpServlet {
 			sb.append(". value"+value[0]);
 		}
 		
-		
-		//outputStream.write(sb.toString().getBytes());
-		if(checkIfUserExist(email,password)){
+		//validate form
+		if(email == null || email.length()==0){
+			//resend login jsp with error message
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+			request.setAttribute("username_error", "username_error");
+			requestDispatcher.forward(request, response);
+		}else if(checkIfUserExist(email,password)){
 			ServletOutputStream outputStream = response.getOutputStream();
 			String resp = "user "+email+"  exist";
 			outputStream.write(resp.getBytes());
 		}else{
-//			String resp = "user "+email+" not exist";
-//			outputStream.write(resp.getBytes());
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/createAccount.jsp");
 			requestDispatcher.forward(request, response);
 		}

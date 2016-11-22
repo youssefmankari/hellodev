@@ -58,8 +58,16 @@ public class LoginHandler extends HttpServlet {
 			sb.append(". value"+value[0]);
 		}
 		
+		//error list
+		boolean emptyEmail = false; //user enter empty
+		boolean badEmailFormat = false;
+		boolean emptyPassword = false;
+		boolean bad_username_or_password  = false;
+		
+		
 		//validate form
-		if(email == null || email.length()==0){
+		//we dont need this. moved to javascript
+		if(email == null || email.length()==0){ 
 			//resend login jsp with error message
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
 			request.setAttribute("username_error", "username_error");
@@ -67,9 +75,13 @@ public class LoginHandler extends HttpServlet {
 		}else if(checkIfUserExist(email,password)){
 			ServletOutputStream outputStream = response.getOutputStream();
 			String resp = "user "+email+"  exist";
+			request.setAttribute("badCredentials", "none");
 			outputStream.write(resp.getBytes());
 		}else{
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/createAccount.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+			request.setAttribute("badCredentials", "block");
+			request.setAttribute("login", "block");
+			request.setAttribute("register","none");
 			requestDispatcher.forward(request, response);
 		}
 	}

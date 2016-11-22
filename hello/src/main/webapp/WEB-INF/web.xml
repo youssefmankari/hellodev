@@ -4,7 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+  <listener>
+  	<listener-class>com.candev.tuto.StartStopListener</listener-class>
+  </listener>
+
   <servlet>
   	<servlet-name>LoginHandler</servlet-name>
   	<display-name>LoginHandler</display-name>
@@ -17,6 +20,18 @@
   	<description></description>
   	<servlet-class>com.candev.tuto.servlet.RegisterHandler</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RegisterAccountHandler</servlet-name>
+  	<display-name>RegisterAccountHandler</display-name>
+  	<description></description>
+  	<servlet-class>com.candev.tuto.servlet.RegisterAccountHandler</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CreatePermissionServlet</servlet-name>
+  	<display-name>CreatePermissionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.candev.tuto.servlet.CreatePermissionServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>LoginHandler</servlet-name>
@@ -25,5 +40,13 @@
   <servlet-mapping>
   	<servlet-name>RegisterHandler</servlet-name>
   	<url-pattern>/RegisterHandler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterAccountHandler</servlet-name>
+  	<url-pattern>/RegisterAccountHandler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreatePermissionServlet</servlet-name>
+  	<url-pattern>/CreatePermissionServlet</url-pattern>
   </servlet-mapping>
 </web-app>

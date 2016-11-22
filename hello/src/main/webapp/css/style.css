@@ -1,6 +1,6 @@
 @CHARSET "US-ASCII";
 body {
-    padding-top: 90px;
+    padding-top: 0px;
 }
 .panel-login {
 	border-color: #ccc;
@@ -102,3 +102,49 @@ body {
 .red{
 	color:red;
 }
+
+
+.container-fluid {
+	background-color:yellow;
+	
+	
+	
+}
+
+.navbar > .container-fluid .navbar-brand .navbar-fixed-top{
+    margin-left: -15px;
+}
+
+li a{
+	color: blue;
+	font-size: 20px;
+}
+
+.navbar .nav,
+.navbar .nav > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+
+.navbar-inner {
+  text-align:center;
+}
+
+#joobbo{
+	background-color: yellow;
+	color: blue;
+}
+
+
+
+
+
+
+
+
+
+	
+	

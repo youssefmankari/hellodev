@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="US-ASCII"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>create account</title>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -80,7 +79,7 @@
 
 	<div class="container">
 
-		<h4 style="color: red">Sweepee : Just Sweep</h4>
+		<h4 style="color: red">sweepee : Just Sweep</h4>
 		<div>
 			<div class="row">
 				<div class="col-xs-12">User name</div>

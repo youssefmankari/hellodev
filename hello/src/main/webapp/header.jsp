@@ -30,7 +30,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#"><span class="glyphicon glyphicon-user"></span>
 					Sign Up</a></li>
-			<li><a href="/hello/login.jsp"><span class="glyphicon glyphicon-log-in"></span>
+			<li><a href="/sweepee/login.jsp"><span class="glyphicon glyphicon-log-in"></span>
 					Login</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-help"></span>
 					Help</a></li>
@@ -48,11 +48,11 @@
 		</div>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/hello/RegisterAccountHandler"><span
+					<li><a href="/sweepee/RegisterAccountHandler"><span
 							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="/hello/login.jsp"><span
+					<li><a href="/sweepee/login.jsp"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="/hello/login.jsp"><span
+					<li><a href="/sweepee/login.jsp"><span
 							class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-help"></span>
 							Hey Kaddour</a></li>

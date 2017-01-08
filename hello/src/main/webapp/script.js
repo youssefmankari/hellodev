@@ -45,7 +45,7 @@ $(function() {
 //	 $('#register-submit').click(function(e){
 //		 $.ajax(
 //				 {
-//					 url:"/hello/RegisterAccountHandler",
+//					 url:"/sweepee/RegisterAccountHandler",
 //					 success:function(result){
 //						 
 //						 		$('#div1').html('<p>SUCCESS</p>');

@@ -1,62 +1,128 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <filter>
-  	<filter-name>SessionFilter</filter-name>
-  	<display-name>SessionFilter</display-name>
-  	<description></description>
-  	<filter-class>com.candev.tuto.servlet.SessionFilter</filter-class>
-  </filter>
-  <filter-mapping>
-  	<filter-name>SessionFilter</filter-name>
-  	<url-pattern>/SessionFilter</url-pattern>
-  </filter-mapping>
-  <listener>
-  	<listener-class>com.candev.tuto.servlet.StartStopListener</listener-class>
-  </listener>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	
+	<!-- <context-param>
+		<param-name>log4j-config-file-location</param-name>
+		<param-value>WEB-INF/log4j.properties</param-value>
+	</context-param> -->
+	
+	<filter>
+		<description></description>
+		<display-name>SessionFilter</display-name>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>com.candev.tuto.servlet.SessionFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.candev.tuto.servlet.listeners.ContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.candev.tuto.servlet.listeners.UserSessionListener</listener-class>
+	</listener>
 
-  <servlet>
-  	<servlet-name>LoginHandler</servlet-name>
-  	<display-name>LoginHandler</display-name>
-  	<description></description>
-  	<servlet-class>com.candev.tuto.servlet.LoginHandler</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>RegisterHandler</servlet-name>
-  	<display-name>RegisterHandler</display-name>
-  	<description></description>
-  	<servlet-class>com.candev.tuto.servlet.RegisterHandler</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>RegisterAccountHandler</servlet-name>
-  	<display-name>RegisterAccountHandler</display-name>
-  	<description></description>
-  	<servlet-class>com.candev.tuto.servlet.RegisterAccountHandler</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>CreatePermissionServlet</servlet-name>
-  	<display-name>CreatePermissionServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.candev.tuto.servlet.CreatePermissionServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>LoginHandler</servlet-name>
-  	<url-pattern>/LoginHandler</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>RegisterHandler</servlet-name>
-  	<url-pattern>/RegisterHandler</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>RegisterAccountHandler</servlet-name>
-  	<url-pattern>/RegisterAccountHandler</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>CreatePermissionServlet</servlet-name>
-  	<url-pattern>/CreatePermissionServlet</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>LoginHandler</display-name>
+		<servlet-name>LoginHandler</servlet-name>
+		<servlet-class>com.candev.tuto.servlet.LoginHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>RegisterHandler</display-name>
+		<servlet-name>RegisterHandler</servlet-name>
+
+		<servlet-class>com.candev.tuto.servlet.RegisterHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>RegisterAccountHandler</display-name>
+
+		<servlet-name>RegisterAccountHandler</servlet-name>
+
+		<servlet-class>com.candev.tuto.servlet.RegisterAccountHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>CreatePermissionServlet</display-name>
+		<servlet-name>CreatePermissionServlet</servlet-name>
+
+
+		<servlet-class>com.candev.tuto.servlet.CreatePermissionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutHandler</display-name>
+		<servlet-name>LogoutHandler</servlet-name>
+		<servlet-class>com.candev.tuto.servlet.LogoutHandler</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ControlPanelServlet</display-name>
+		<servlet-name>ControlPanelServlet</servlet-name>
+		<servlet-class>com.candev.tuto.servlet.ControlPanelServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TestAjax</display-name>
+		<servlet-name>TestAjax</servlet-name>
+		<servlet-class>com.candev.tuto.servlet.TestAjax</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>GetPermissionsServlet</display-name>
+		<servlet-name>GetPermissionsServlet</servlet-name>
+		<servlet-class>com.candev.tuto.servlet.GetPermissionsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginHandler</servlet-name>
+		<url-pattern>/LoginHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterHandler</servlet-name>
+		<url-pattern>/RegisterHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterAccountHandler</servlet-name>
+		<url-pattern>/RegisterAccountHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreatePermissionServlet</servlet-name>
+		<url-pattern>/CreatePermissionServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutHandler</servlet-name>
+		<url-pattern>/LogoutHandler</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ControlPanelServlet</servlet-name>
+		<url-pattern>/ctrlpanel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestAjax</servlet-name>
+		<url-pattern>/testajax</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetPermissionsServlet</servlet-name>
+		<url-pattern>/getpermissions</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+
+	<!-- <jsp-config> <jsp-property-group> <url-pattern>*.jsp</url-pattern> 
+		<el-enabled>true</el-enabled> <scripting-enabled>true</scripting-enabled> 
+		</jsp-property-group> </jsp-config> -->
 </web-app>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page  language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="US-ASCII"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -104,7 +104,7 @@ if(badCredentials == null){
 
 									<div class="form-group">
 										<input type="text" name="email" id="email" tabindex="1"
-											class="form-control" placeholder="Username or Email" value="">
+											class="form-control" placeholder="Username or Email" value="admin@gmail.com">
 											
 											<label id="emailError" style="color:red; display: none;" >Please, enter a valid user name!</label>
 											
@@ -119,7 +119,7 @@ if(badCredentials == null){
 
 									<div class="form-group">
 										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="Password">
+											tabindex="2" class="form-control" placeholder="Password"  value="admin">
 											<label id="passwordError" style="color:red; display: none;" >Please, enter a valid password!</label>
 									</div>
 									<div class="form-group text-center">

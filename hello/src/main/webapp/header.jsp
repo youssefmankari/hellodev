@@ -14,31 +14,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
 
-	<!-- <nav class="navbar navbar-fixed-top">
-	<div class="container-fluid">
-
-		<div class="navbar-header">
-			<img src="images/sweepee_logo.png" href="#" class="navbar-brand"
-				alt="sweepee" width="204" height="304">
-		</div>
-
-		
-
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-					Sign Up</a></li>
-			<li><a href="/sweepee/login.jsp"><span class="glyphicon glyphicon-log-in"></span>
-					Login</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-help"></span>
-					Help</a></li>
-		</ul>
-
-	</div>
-	</nav> -->
-	
 	<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
            <div class="container-fluid">
@@ -48,22 +29,51 @@
 		</div>
 
 				<ul class="nav navbar-nav navbar-right">
+				
+            
+				
+				<c:if test="${empty sessionScope.existingUser }">
+					
 					<li><a href="/sweepee/RegisterAccountHandler"><span
 							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 					<li><a href="/sweepee/login.jsp"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="/sweepee/login.jsp"><span
+							
+				</c:if>
+				
+				<c:if test="${not empty sessionScope.existingUser }">
+							
+					<li><a href="/sweepee/LogoutHandler"><span
 							class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-help"></span>
-							Hey Kaddour</a></li>
-					<li><a href="/sweepee/admin.jsp"><span
+							</c:if>
+
+					<c:if test="${not empty sessionScope.existingUser.email }">
+						<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><c:out value="${sessionScope.existingUser.email}"/> <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">New Sweepee</a></li>
+                <li><a href="#">My Sweepees</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+							
+						</c:if>
+						
+						<c:if test="${sessionScope.existingUser.isAdmin()}">
+						
+					<li><a href="/sweepee/ctrlpanel"><span
 							class="glyphicon glyphicon-wrench"></span> Control Panel</a></li>
+							</c:if>
 
 				</ul>
 
 			</div><!-- container -->
       </div><!-- navbar-inner -->
  </div><!--  navbar navbar-fixed-top -->
+ 
+
 
 </body>
 </html>

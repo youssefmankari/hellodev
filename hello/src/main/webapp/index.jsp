@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page    language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="US-ASCII"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,7 +15,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-	
+	<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <title>Welcome to sweepee</title>
@@ -28,6 +29,12 @@
 			<p>Match classified items near You!</p>
 		</div>
 	</div>
+	
+	<%@include file="navigation.jsp" %>
+	
+	
+	
+	
 	
 
 </body>

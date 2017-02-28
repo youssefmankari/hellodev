@@ -32,15 +32,26 @@ $(function() {
 		});
 	 
 	 $('#permissions_link').click(function() {
+		 getPermissions();
 		 $('#roles').css('display','none');
 		$('#permissions').css('display','block');
+		$('#categories').css('display','none');
 	});
 	 
 	 $('#roles_link').click(function() {
 		$('#roles').css('display','block');
 		$('#permissions').css('display','none');
+		$('#categories').css('display','none');
 		
 	});
+	 
+	 $('#categories_link').click(function() {
+		 $('#roles').css('display','none');
+		$('#permissions').css('display','none');
+		$('#categories').css('display','block');
+	});
+	 
+	 
 	 
 //	 $('#register-submit').click(function(e){
 //		 $.ajax(
@@ -67,6 +78,58 @@ $(function() {
 	 
 
 });
+
+function getPermissions(){
+//	$.get(
+//			"/sweepee/testajax",
+//			{name:"ajaxeamsterdam"},
+//			
+//			function(data){
+//				$('#stage').html(data.nickName);
+//				$('#tabla tr:last').after('<tr><td>rnee</td><td>bouchm</td><td>jlil@example.com</td></tr>');
+//			}
+//			function(data) {
+//			    $.each(data, function(index, element) {
+//			        $('#stage').append($('<div>', {
+//			            text: element.nickName
+//			        }));
+//			    });}
+//	);
+	
+	$.ajax({ 
+	    type: 'GET', 
+	    url: '/sweepee/getpermissions', 
+	    data: { get_param: 'value' }, 
+	    dataType: 'json',
+	    success: function (data) { 
+//	    	$('#stage').html(data[0].permissionName);
+	    	$("#tabla tbody tr").remove();
+	    	$.each(data, function(i, item) {
+	    		//$('#stage').html(item.permissionName);
+	    		
+	    		$('<tr>').append(
+	    	            $('<td>').text(item.id),
+	    	            $('<td>').text(item.permissionName),
+	    	            $('<td>').html('<span onclick="delet();"class="glyphicon glyphicon-remove"></span>')
+	    	            
+	    	        ).appendTo('#tabla');
+	    	});
+	    }
+	});
+}
+
+function delet(){
+	$('#tabla').find('tr').click( function(){
+		  alert('You clicked row '+ ($(this).index()+1) );
+		  var selectedIndex =  ($(this).index()+1);
+		  
+		  
+		});
+}
+
+function CreatePermission(){
+	alert('fha chliha');
+}
 
 function checkPermission(){
 	return true;
@@ -115,14 +178,27 @@ function htmlbodyHeightUpdate(){
 	
 }
 $(document).ready(function () {
+	
 	htmlbodyHeightUpdate();
 	$( window ).resize(function() {
 		htmlbodyHeightUpdate();
 	});
+	
 	$( window ).scroll(function() {
 		height2 = $('.main').height();
 			htmlbodyHeightUpdate();
 	});
+	
+	$(".dropdown").hover(            
+	        function() {
+	            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+	            $(this).toggleClass('open');        
+	        },
+	        function() {
+	            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+	            $(this).toggleClass('open');       
+	        }
+	    );
 });
 
 
